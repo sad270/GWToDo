@@ -1,0 +1,21 @@
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% extends "GWToDoBundle::layout.html.twig" %}
+{% block description %}{{ parent() }}{% endblock %}
+{% block title %}{{ parent() }} - Index{% endblock %}
+{% block container %}
+<h3>Ajouter un ToDo</h3>
+
+<div class="well">
+  {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.expiration) }}
+    {{ form_row(form.project) }}
+      <div class="form-group">
+        <div class="col-sm-2 control-label" for=""></div><div class="col-sm-10"><a href="{{ path('gw_to_do_project_add') }}" role="button" class="btn btn-primary btn-block">Créer un nouveau Projet</a></div>
+  </div>
+{{ form_end(form) }}
+</div>
+
+{% endblock %}

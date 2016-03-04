@@ -1,0 +1,7 @@
+routing_GWToDoBundle_ToDo:
+    resource: "@GWToDoBundle/Resources/config/routing/routingToDo.yml"
+    prefix: /
+
+routing_GWToDoBundle_Project:
+    resource: "@GWToDoBundle/Resources/config/routing/routingProject.yml"
+    prefix: /Project

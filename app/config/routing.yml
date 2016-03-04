@@ -1,0 +1,3 @@
+gw_to_do:
+    resource: "@GWToDoBundle/Resources/config/routing.yml"
+    prefix:   /

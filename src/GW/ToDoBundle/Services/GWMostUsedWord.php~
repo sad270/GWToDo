@@ -1,0 +1,21 @@
+<?php
+namespace GW\ToDoBundle\Services;
+
+class GWMostUsedWord
+{
+  /**
+   * Return le mot le plus utilisé dans un ToDo
+   *
+   * @param ToDo $todo
+   * @return Array
+   */
+  public function mostUsed($todo)
+  {
+    $content = ucwords(strtolower($todo->getContent()));
+    $contentArray = explode(' ', $content);
+    $resultArray = array_count_values($contentArray);
+    $getMaxValuesKeys = array_keys($resultArray, max($resultArray));
+    $return = sort($getMaxValuesKeys);
+    return $return;
+  }
+}
